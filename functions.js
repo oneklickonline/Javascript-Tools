@@ -109,7 +109,7 @@ function populateData(data_url,data,display){
 }
 
 /*AJAX FUNCTION TO RETURN RESPONSE DATA*/
-function returnResponse(data_url,data,requestType){
+function returnResponse(data_url,data,responseType){
     if(!requestType){requestType = '';}
     return $.ajax({
         type: 'post',
@@ -117,9 +117,9 @@ function returnResponse(data_url,data,requestType){
         data: data
       
   }).done(function (response){
-      if (requestType === 'json'){return JSON.parse(response);}
-      else if(requestType === 'string'){return JSON.stringify(response);}
-      else if (requestType === ''){  return response; }
+      if (responseType === 'json'){return JSON.parse(response);}
+      else if(responseType === 'string'){return JSON.stringify(response);}
+      else if (responseType === ''){  return response; }
     }).fail(function (xhr) {
         let err =  xhr.statusText;
         $.notify("Error! "+err,{className:"error",clickToHide:true,autoHideDelay:5000});
