@@ -7,10 +7,10 @@ function showElem(frm){
         $(activeForm).hide();
     }
     
-    $('.overlay-container').fadeIn();
+    $('.overlay-container').fadeOut();
     //Display the form after 3 miliseconds
     setTimeout(function(){
-    $(frm).fadeIn();
+    $(frm).fadeOut();
     },300);
     //Initialize the activeForm to the currently displayed form.
     activeForm = frm;
